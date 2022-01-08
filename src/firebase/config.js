@@ -1,8 +1,7 @@
-import * as firebase from 'firebase/app'
-import 'firebase/storage'
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 import 'firebase/firestore';
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,9 +16,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const projectStorage = firebase.storage()
-const projectFirestore = firebase.firestore()
+const projectStorage = firebase.storage();
+const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore }
+export { projectStorage, projectFirestore, timestamp }
